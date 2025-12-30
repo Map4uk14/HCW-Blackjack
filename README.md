@@ -11,7 +11,7 @@ This is a JavaFX-based Blackjack game built with Gradle.
 
 ## 🛠 Setup & Requirements
 * **JDK:** 17 or higher
-* **Build System:** Gradle
+* **Build System:** Gradle (Kotlin DSL!)
 
 ### How to Run
 To start the application, use the Gradle wrapper in your terminal:
