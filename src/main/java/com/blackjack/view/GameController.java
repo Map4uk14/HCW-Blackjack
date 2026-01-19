@@ -1,10 +1,12 @@
 package com.blackjack.view;
 
+import com.blackjack.controller.BlackjackController;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
 import javafx.scene.Scene;
+import javafx.scene.control.Label;
 import javafx.stage.Stage;
 
 import java.io.IOException;
@@ -21,4 +23,39 @@ public class GameController {
         Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
         stage.setScene(scene);
     }
+
+    private final BlackjackController game = new BlackjackController();
+
+    @FXML
+    public void onHit() {
+        game.playerHit();
+        updateUI();
+    }
+
+    @FXML
+    public void onStand() {
+        game.playerStand();
+        updateUI();
+    }
+
+    @FXML
+    public void onDoubleDown() {
+        game.playerDoubleDown();
+        updateUI();
+    }
+
+    private void updateUI() {
+        // später aktualisieren für:
+        // - Spieler Score
+        // - Dealer Score
+        // - Credits
+        // - Kartenanzeige
+        System.out.println("Player Score: " + game.getPlayer().getScore());
+        System.out.println("Dealer Score: " + game.getDealer().getScore());
+        System.out.println("Credits: " + game.getPlayer().getCredits());
+    }
+
+    @FXML private Label playerScoreLabel;
+    @FXML private Label dealerScoreLabel;
+    @FXML private Label creditsLabel;
 }

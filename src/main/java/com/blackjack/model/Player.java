@@ -30,7 +30,23 @@ public class Player {
         return hand;
     }
 
-    public void draw() {
+    // Draw() changed by Lukas
+    public void hit(Deck deck) {
+        hand.addCardToHand(deck.draw());
+    }
 
+    public int getCurrentBet() {
+        return currentBet;
+    }
+
+    public void placeBet(int bet) {
+    }
+
+    public int getCredits() {
+        return credits;
+    }
+
+    public boolean isBust() {
+        return hand.isBust();
     }
 }
