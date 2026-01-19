@@ -49,4 +49,7 @@ public class Player {
     public boolean isBust() {
         return hand.isBust();
     }
+
+    public void pushBet() {
+    }
 }

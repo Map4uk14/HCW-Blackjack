@@ -16,7 +16,7 @@ public class SettlementService {
         } else if (p < d) {
             player.loseBet();
         } else {
-            player.draw();
+            player.pushBet();
         }
     }
 }
