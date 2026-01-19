@@ -34,4 +34,8 @@ public class Hand {
     public List<Card> getCards() {
         return Collections.unmodifiableList(cards);
     }
+
+    public void clear() {
+        cards.clear();
+    }
 }

@@ -2,8 +2,6 @@ package com.blackjack.model;
 
 public class Player {
 
-
-
     private final Hand hand = new Hand();
     private int credits;
     private int currentBet;
@@ -13,17 +11,17 @@ public class Player {
     }
 
     public void winBet() {
-        credits += currentBet ;
-        System.out.println("Player won the bet: " + credits + currentBet);
+        credits += currentBet * 2 ;
+        System.out.println("Player won the bet: " + credits + "+" + currentBet);
     }
 
     public void loseBet() {
-        credits -= currentBet;
-        System.out.println("Player lost the bet: " + credits + currentBet);
+        currentBet = 0;
+        System.out.println("Player lost the bet: " + credits + "-" + currentBet);
     }
 
     public int getScore() {
-        return credits;
+        return hand.getScore();
     }
 
     public Hand getHand() {
@@ -39,7 +37,13 @@ public class Player {
         return currentBet;
     }
 
-    public void placeBet(int bet) {
+    public boolean placeBet(int bet) {
+        if (bet > 0 && bet <= credits) {
+            currentBet = bet;
+            credits -= bet;
+            return true;
+        }
+        return false;
     }
 
     public int getCredits() {
@@ -51,5 +55,7 @@ public class Player {
     }
 
     public void pushBet() {
+        credits += currentBet;       // Einsatz zurück
+        currentBet = 0;
     }
 }

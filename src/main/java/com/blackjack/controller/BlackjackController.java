@@ -21,8 +21,8 @@ public class BlackjackController {
     public void startRound(int bet) {
         deck = new Deck();
 
-        player.getHand().getCards().clear(); // optional falls Reset fehlt
-        dealer.getHand().getCards().clear();
+        player.getHand().clear();
+        dealer.getHand().clear();
 
         player.placeBet(bet);
 

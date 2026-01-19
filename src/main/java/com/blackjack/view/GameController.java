@@ -58,4 +58,10 @@ public class GameController {
     @FXML private Label playerScoreLabel;
     @FXML private Label dealerScoreLabel;
     @FXML private Label creditsLabel;
+
+    @FXML
+    public void onStartRound() {
+        game.startRound(100);
+        updateUI();
+    }
 }

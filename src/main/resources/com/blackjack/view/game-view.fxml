@@ -14,6 +14,8 @@
     <Label fx:id="dealerScoreLabel" text="Dealer: ?"/>
     <Label fx:id="creditsLabel" text="Credits: 1000"/>
 
+    <Button text="Start Round" onAction="#onStartRound"/>
+
     <!-- Buttons -->
     <HBox spacing="10" alignment="CENTER">
         <Button text="Hit" onAction="#onHit"/>

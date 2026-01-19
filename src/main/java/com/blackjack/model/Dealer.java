@@ -6,10 +6,14 @@ public class Dealer {
     public int score;
 
     public int getScore() {
-        return score;
+        return hand.getScore();
     }
 
     public Hand getHand() {
         return  hand;
+    }
+
+    public boolean isBust() {
+        return hand.isBust();
     }
 }
