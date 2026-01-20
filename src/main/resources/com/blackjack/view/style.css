@@ -1,48 +1,33 @@
-.root {
-    -fx-background-color: linear-gradient(to bottom right, #182e1e, #245559);
-}
+.root { -fx-background-color: linear-gradient(to bottom right, #182e1e, #245559); }
 
+/* Menü-Buttons (Gleiche Größe) */
 .button {
     -fx-font-size: 18px;
     -fx-padding: 10px 20px;
     -fx-background-color: #2980b9;
     -fx-text-fill: white;
     -fx-background-radius: 10;
+    -fx-min-width: 200px;
 }
+.button:hover { -fx-background-color: #3498db; }
 
-.button:hover {
-    -fx-background-color: #3498db;
-}
-
-.label {
-    -fx-font-size: 36px;
-    -fx-text-fill: white;
-}
-
-#gameLabel {
-    -fx-font-size: 80px;       /* Big font */
-    -fx-font-weight: bold;      /* Bold text */
-    -fx-text-fill: gold;        /* Optional color */
-    -fx-font-family: "Arial Black"; /* Optional font */
-}
-
+/* Namens-Feld zentriert */
 #usernameField {
-    -fx-pref-width: 300px;
-    -fx-max-width: 300px;
-    -fx-font-size: 20px;           /* bigger text */
-    -fx-padding: 8px 12px;         /* space inside field */
-    -fx-background-radius: 10;     /* rounded corners */
-    -fx-border-color: #3498db;    /* border color */
-    -fx-border-width: 2px;
-    -fx-text-fill: black;          /* text color */
-    -fx-background-color: white;   /* field background */
+    -fx-pref-width: 400px; -fx-pref-height: 50px;
+    -fx-font-size: 22px; -fx-alignment: center;
 }
 
-#gameLabelStart {
-    -fx-font-size: 50px;       /* Big font */
-        -fx-font-weight: bold;      /* Bold text */
-        -fx-text-fill: black;        /* Optional color */
-        -fx-font-family: "Arial Black"; /* Optional font */
+/* Großes Einsatzfeld */
+#betField {
+    -fx-pref-width: 120px; -fx-pref-height: 45px;
+    -fx-font-size: 20px; -fx-alignment: center;
 }
 
+/* Farben Spiel-Buttons  */
+#hitBtn { -fx-background-color: #2ecc71; -fx-min-width: 100px; }
+#standBtn { -fx-background-color: #e74c3c; -fx-min-width: 100px; }
+#doubleBtn { -fx-background-color: #e67e22; -fx-min-width: 120px; }
+#cashoutBtn { -fx-background-color: #9b59b6; -fx-min-width: 120px; }
 
+.label { -fx-text-fill: white; }
+#gameLabel { -fx-text-fill: gold; -fx-font-weight: bold; -fx-font-size: 80px; }
