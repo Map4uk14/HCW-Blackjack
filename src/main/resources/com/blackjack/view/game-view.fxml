@@ -1,27 +1,96 @@
-<?import javafx.scene.layout.VBox?>
-<?import javafx.scene.layout.HBox?>
-<?import javafx.scene.control.Button?>
-<?import javafx.scene.control.Label?>
-<VBox spacing="15" alignment="TOP_CENTER"
-      xmlns="http://javafx.com/javafx"
-      xmlns:fx="http://javafx.com/fxml"
-      fx:controller="com.blackjack.view.GameController">
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.geometry.Insets?>
 
-    <Label text="Blackjack" style="-fx-font-size: 22px;"/>
+<BorderPane xmlns:fx="http://javafx.com/fxml" fx:controller="com.blackjack.view.GameController"
+            minWidth="800" minHeight="600" prefWidth="800" prefHeight="600">
 
-    <!-- Anzeigen -->
-    <Label fx:id="playerScoreLabel" text="Player: 0"/>
-    <Label fx:id="dealerScoreLabel" text="Dealer: ?"/>
-    <Label fx:id="creditsLabel" text="Credits: 1000"/>
+    <!-- TOP: Dealer -->
+    <top>
+        <VBox alignment="CENTER" spacing="5" style="-fx-padding: 10;">
+            <HBox alignment="CENTER">
+                <Label text="DEALER" style="-fx-font-weight: bold; -fx-font-size: 18px; -fx-text-fill: white;"/>
+                <Region HBox.hgrow="ALWAYS"/>
+                <Button text="Back" onAction="#onBack" style="-fx-background-color: #7f8c8d;"/>
+            </HBox>
 
-    <Button text="Start Round" onAction="#onStartRound"/>
+            <HBox fx:id="dealerCardBox" alignment="CENTER" minHeight="140" maxHeight="140" spacing="10"/>
+            <Label fx:id="dealerScoreLabel" text="Score: ?" style="-fx-font-size: 16px;"/>
+        </VBox>
+    </top>
 
-    <!-- Buttons -->
-    <HBox spacing="10" alignment="CENTER">
-        <Button text="Hit" onAction="#onHit"/>
-        <Button text="Stand" onAction="#onStand"/>
-        <Button text="Double Down" onAction="#onDoubleDown"/>
-    </HBox>
+    <!-- LINKS: AI 1 -->
+    <left>
+        <VBox alignment="CENTER" spacing="5" style="-fx-padding: 10;" minWidth="120">
+            <Label text="AI 1" style="-fx-font-weight: bold; -fx-font-size: 14px;"/>
+            <StackPane fx:id="ai1CardBox" minHeight="120" maxHeight="120" minWidth="80"/>
+            <Region minHeight="10"/>
+            <Label fx:id="ai1Credits" text="Credits: 1000€" style="-fx-font-size: 11px; -fx-text-fill: gold;"/>
+            <Label fx:id="ai1Score" text="Score: 0" style="-fx-font-size: 12px;"/>
+        </VBox>
+    </left>
 
-    <Button text="Back" onAction="#onBack"/>
-</VBox>
+    <!-- MITTIG: ERGEBNIS -->
+    <center>
+        <StackPane>
+            <Label fx:id="resultLabel" style="-fx-font-size: 28px; -fx-font-weight: bold; -fx-text-fill: gold;"/>
+        </StackPane>
+    </center>
+
+    <!-- RECHTS: AI 2 & AI 3 -->
+    <right>
+        <VBox alignment="CENTER" spacing="20" style="-fx-padding: 10;" minWidth="120">
+            <!-- AI 2 -->
+            <VBox alignment="CENTER" spacing="5">
+                <Label text="AI 2" style="-fx-font-weight: bold; -fx-font-size: 14px;"/>
+                <StackPane fx:id="ai2CardBox" minHeight="120" maxHeight="120" minWidth="80"/>
+                <Region minHeight="10"/>
+                <Label fx:id="ai2Credits" text="Credits: 1000€" style="-fx-font-size: 11px; -fx-text-fill: gold;"/>
+                <Label fx:id="ai2Score" text="Score: 0" style="-fx-font-size: 12px;"/>
+            </VBox>
+
+            <!-- AI 3 -->
+            <VBox alignment="CENTER" spacing="5">
+                <Label text="AI 3" style="-fx-font-weight: bold; -fx-font-size: 14px;"/>
+                <StackPane fx:id="ai3CardBox" minHeight="120" maxHeight="120" minWidth="80"/>
+                <Region minHeight="10"/>
+                <Label fx:id="ai3Credits" text="Credits: 1000€" style="-fx-font-size: 11px; -fx-text-fill: gold;"/>
+                <Label fx:id="ai3Score" text="Score: 0" style="-fx-font-size: 12px;"/>
+            </VBox>
+        </VBox>
+    </right>
+
+    <!-- UNTEN: SPIELER + STEUERUNG -->
+    <bottom>
+        <VBox alignment="CENTER" spacing="10" style="-fx-padding: 15;" maxHeight="280">
+
+            <!-- SPIELER KARTEN -->
+            <HBox fx:id="playerCardBox" alignment="CENTER" minHeight="140" maxHeight="140" spacing="10"/>
+
+            <!-- SCORES -->
+            <HBox spacing="20" alignment="CENTER">
+                <Label fx:id="playerScoreLabel" text="Hand: 0" style="-fx-font-size: 16px;"/>
+                <Label fx:id="creditsLabel" text="Balance: 1000€" style="-fx-text-fill: gold; -fx-font-size: 16px;"/>
+            </HBox>
+
+            <!-- WETT INPUT -->
+            <HBox spacing="10" alignment="CENTER">
+                <Label text="Bet:" style="-fx-text-fill: white;"/>
+                <TextField fx:id="betField" text="10" />
+                <Button fx:id="dealBtn" text="DEAL" onAction="#onStartRound"
+                        style="-fx-font-weight: bold; -fx-min-width: 80px;"/>
+            </HBox>
+
+            <!-- ACTION BUTTON -->
+            <HBox spacing="15" alignment="CENTER">
+                <Button fx:id="hitBtn" text="HIT" onAction="#onHit" />
+                <Button fx:id="standBtn" text="STAND" onAction="#onStand" />
+                <Button fx:id="doubleBtn" text="DOUBLE" onAction="#onDoubleDown" />
+                <Button fx:id="cashoutBtn" text="CASH OUT" onAction="#onCashOut" />
+            </HBox>
+
+        </VBox>
+    </bottom>
+
+</BorderPane>
