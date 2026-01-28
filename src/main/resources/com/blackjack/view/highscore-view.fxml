@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+
+<VBox spacing="20" alignment="CENTER" stylesheets="@style.css"
+      xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml"
+      fx:controller="com.blackjack.view.HighscoreController">
+
+    <padding>
+        <Insets top="30" right="50" bottom="30" left="50"/>
+    </padding>
+
+    <Label text="HIGH SCORES" style="-fx-font-size: 50px; -fx-font-weight: bold; -fx-text-fill: gold;"/>
+
+    <!-- Highscore List -->
+    <VBox fx:id="highscoreList" spacing="10" alignment="CENTER"
+          style="-fx-background-color: rgba(0,0,0,0.3); -fx-background-radius: 10; -fx-padding: 20;"
+          minWidth="400" minHeight="300">
+        <Label text="No highscores yet..." style="-fx-text-fill: #888; -fx-font-size: 16px;"/>
+    </VBox>
+
+    <!-- Buttons -->
+    <HBox spacing="20" alignment="CENTER">
+        <Button text="Back" onAction="#onBack" style="-fx-background-color: #7f8c8d;"/>
+    </HBox>
+
+</VBox>

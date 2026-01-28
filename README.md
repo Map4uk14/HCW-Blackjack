@@ -1,7 +1,7 @@
 # ♠️ JavaFX Blackjack - Uni Project
 
 This is a JavaFX-based Blackjack game built with Gradle.
-**Team:** Dopler, Shappert, Kocyigit, Yusupov.
+**Team:** Dopler, Shappert, Kocyigit,
 
 ## 🎮 Game Rules (From Project Backlog)
 * **Minimum Bet:** 10€.
@@ -16,7 +16,7 @@ This project uses external graphical assets to enhance the UI:
 
 ## 🛠 Setup & Requirements
 * **JDK:** 17 or higher
-* **Build System:** Gradle
+* **Build System:** Gradle (Kotlin DSL!)
 
 ### How to Run
 To start the application, use the Gradle wrapper in your terminal:

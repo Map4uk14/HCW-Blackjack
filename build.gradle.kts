@@ -1,6 +1,6 @@
 plugins {
-    id 'application'
-    id 'org.openjfx.javafxplugin' version '0.1.0'
+    id("application")
+    id("org.openjfx.javafxplugin") version "0.1.0"
 }
 
 repositories {
@@ -8,14 +8,14 @@ repositories {
 }
 
 javafx {
-    version = "17"
-    modules = [ 'javafx.controls', 'javafx.fxml' ]
+    version = "21"
+    modules = listOf("javafx.controls", "javafx.fxml")
 }
 
 application {
-    mainClass = 'com.blackjack.view.BlackjackApp'
+    mainClass.set("com.blackjack.view.BlackjackApp")
 }
 
 dependencies {
-    testImplementation 'org.junit.jupiter:junit-jupiter:5.8.1'
+    testImplementation("org.junit.jupiter:junit-jupiter:5.8.1")
 }

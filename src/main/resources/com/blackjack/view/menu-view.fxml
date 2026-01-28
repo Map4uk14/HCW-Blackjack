@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox spacing="15" alignment="CENTER" stylesheets="@style.css"
+      xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml"
+      fx:controller="com.blackjack.view.MainMenuController">
+
+    <Label text="BLACKJACK" fx:id="gameLabel" style="-fx-font-size: 80px; -fx-font-weight: bold; -fx-text-fill: gold;"/>
+
+    <Button text="Start" onAction="#onStart" styleClass="menu-button"/>
+    <Button text="Settings" onAction="#onSettings" styleClass="menu-button"/>
+    <Button text="High scores" onAction="#onHighscores" styleClass="menu-button"/>
+    <Button text="Exit" onAction="#onExit" styleClass="menu-button"/>
+
+</VBox>
